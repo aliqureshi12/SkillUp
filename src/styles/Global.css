@@ -1,0 +1,19 @@
+/* src/styles/global.css */
+:root {
+    --heading-color: #3490dc;
+    --headingColor1: #3490dc;
+    /* Blue */
+    --headingColor2: #e74c3c;
+    /* Red */
+    --headingColor3: #2ecc71;
+    /* Green */
+    --headingColor4: #f39c12;
+    /* Yellow */
+    --headingColor5: #9b59b6;
+    /* Purple */
+    /* Set your primary color here */
+}
+
+.bg-ali {
+    background-color: var(--heading-color);
+}

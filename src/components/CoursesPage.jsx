@@ -1,0 +1,18 @@
+import React from 'react';
+import HeroSection from './HeroSection';
+import AboutSection from './AboutSection';
+import CoursePreview from './CoursePreview';
+import CallToAction from './CallToAction';
+
+function CoursesPage({ courses }) {
+    return (
+        <div>
+
+            <AboutSection />
+            <CoursePreview courses={courses} />
+
+        </div>
+    );
+}
+
+export default CoursesPage;
