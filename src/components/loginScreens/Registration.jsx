@@ -4,7 +4,8 @@ import { Link, NavLink } from 'react-router-dom';
 import logoWhite from '../../assets/logoWhite.png';
 
 
-function Login() {
+function Registration() {
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
@@ -15,7 +16,7 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (email.trim() == '' || password.trim() == '') {
+        if (email.trim() == '' || password.trim() == '' || name.trim() == '') {
             setError("Kindly fill all required fields")
             setSuccess('')
             return
@@ -27,7 +28,7 @@ function Login() {
         setSuccess("You have been Login Successfully!")
 
         setTimeout(() => {
-            navigate('/home')
+            navigate('/')
         }, 1500)
     }
 
@@ -40,9 +41,21 @@ function Login() {
 
                 </div>
                 <div className='lg:w-1/2 bg-BgWhiteColor flex flex-col p-10 justify-center rounded-2xl shadow-lg'>
-                    <h1 className='heading-text-lg font-bold text-[headingColor]'>Sign In</h1>
+                    <h1 className='heading-text-lg font-bold text-[headingColor]'>Create Account</h1>
                     <form onSubmit={handleSubmit} className='space-y-5 py-5'>
 
+                        <div>
+                            <label htmlFor="name" className='block'>
+                                Name*
+                            </label>
+                            <input
+                                type="name"
+                                id="name"
+                                value={name}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className=' w-full border-b border-gray-400 focus:outline-none focus:border-primary py-2'
+                            />
+                        </div>
                         <div>
                             <label htmlFor="email" className='block'>
                                 Enter your Email Address*
@@ -85,8 +98,8 @@ function Login() {
                         </div>
 
                         <div className="mt-6 text-center text-sm text-gray-600">
-                            Don’t have an account?{' '}
-                            <a href="/registration" className="text-greenSmall font-semibold hover:underline">Register Now</a>
+                            Already have an account?{' '}
+                            <a href="/login" className="text-greenSmall font-semibold hover:underline">Login Now</a>
                         </div>
 
 
@@ -103,4 +116,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Registration

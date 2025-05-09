@@ -5,7 +5,7 @@ import CoursePreview from './CoursePreview';
 import CallToAction from './CallToAction';
 import Login from './loginScreens/Login';
 
-function CourseList({ courses }) {
+function HomePage({ courses }) {
     return (
         <div>
             <Login />
@@ -17,4 +17,4 @@ function CourseList({ courses }) {
     );
 }
 
-export default CourseList;
+export default HomePage;

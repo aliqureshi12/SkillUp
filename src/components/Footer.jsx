@@ -5,11 +5,11 @@ import logo from '../assets/logo.png';
 function Footer() {
     return (
         <footer className="mt-auto bg-white border-t shadow-inner">
-            <div className="mx-auto max-w-screen-xl px-4 py-10">
+            <div className="mx-auto max-w-6xl flex flex-col px-4 py-10">
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className="mb-8 md:mb-0 flex-shrink-0">
                         <Link to="/" className="flex items-center">
-                            <img src={logo} alt="Logo" className="h-40" />
+                            <img src={logo} alt="Logo" className="h-25" />
                         </Link>
                     </div>
 

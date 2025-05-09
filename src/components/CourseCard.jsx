@@ -3,15 +3,20 @@ import { Link } from 'react-router-dom';
 
 function CourseCard({ course }) {
     return (
-        <div className="bg-white p-6 rounded-lg shadow-md w-64">
-            <h2 className="text-xl font-semibold mb-2">{course.title}</h2>
-            <p className="text-gray-600">{course.description}</p>
-            <Link
-                to={`/course/${course.id}`}
-                className="inline-block mt-4 bg-amber-700 text-white px-4 py-2 rounded hover:bg-amber-700"
-            >
-                View Details
-            </Link>
+        <div className="p-5 rounded-lg shadow-md w-full flex flex-col  ">
+            <div className='flex-1 flex-col items-start mb-5'>
+                <img
+                    src={course.image}
+                    alt="ali"
+                    className="w-full object-cover mb-4"
+                />
+                <h2 className="font-poppins text-[20px] font-bold mb-2 text-left">{course.title}</h2>
+                <p className="text-gray-600 text-left">{course.description}</p>
+            </div>
+            <button onClick={() => window.location.href = `/course/${course.id}`} className='btn-primary w-46 py-3 text-sm'>
+                View Course
+            </button>
+
         </div>
     );
 }

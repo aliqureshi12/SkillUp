@@ -1,5 +1,5 @@
 import React from 'react';
-import img2 from '../assets/img2.png';
+
 
 function AboutSection() {
     return (
@@ -8,11 +8,7 @@ function AboutSection() {
 
 
                 <div className="lg:w-1/2 w-full">
-                    <img
-                        src={img2}
-                        alt="About Us"
-                        className="w-full h-full object-cover"
-                    />
+
                 </div>
 
 
