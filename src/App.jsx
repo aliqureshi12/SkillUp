@@ -16,6 +16,7 @@ import ai4 from './assets/ai4.png';
 import ai5 from './assets/ai5.png';
 import ai6 from './assets/ai6.png';
 import treeAnimation from './assets/treeAnimation.gif';
+import StudentDashboard from './components/StudentPortal/StudentDashboard';
 
 
 
@@ -38,6 +39,7 @@ function App() {
 
         <Route path="/" element={<GeneratedCourses courses={courses} />} />
         <Route path="/generated-courses" element={<GeneratedCourses courses={courses} />} />
+        <Route path="/student-dashboard" element={<StudentDashboard courses={courses} />} />
         <Route path="/home" element={<HomePage courses={courses} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
