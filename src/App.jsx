@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header-Footer/Header';
+import Footer from './components/Header-Footer/Footer';
 import HomePage from './components/HomePage';
 import CourseDetail from './components/CourseDetail';
 import CoursesPage from './components/CoursesPage';
@@ -37,6 +37,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<GeneratedCourses courses={courses} />} />
+        <Route path="/generated-courses" element={<GeneratedCourses courses={courses} />} />
         <Route path="/home" element={<HomePage courses={courses} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />

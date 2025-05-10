@@ -33,8 +33,8 @@ function Registration() {
     }
 
     return (
-        <div className='min-h-screen bg-BgGradient flex items-center justify-center sm:p-10'>
-            <div className='flex flex-col lg:flex-row max-w-6xl w-full bg-transparent'>
+        <div className='min-h-screen bg-BgGradient flex items-center justify-center sm:p-10 '>
+            <div className='flex flex-col lg:flex-row max-w-6xl w-full bg-transparent pt-20'>
                 <div className='lg:w-1/2 flex flex-col justify-center sm: items-center lg:items-start'>
 
                     <img src={logoWhite} alt="logo" className="w-100" />

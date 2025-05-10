@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../assets/logo.png';
-import avatar from '../assets/avatar.png';
-import medal from '../assets/Medal.png';
+import logo from '../../assets/logo.png';
+import avatar from '../../assets/avatar.png';
+import medal from '../../assets/Medal.png';
 
 export default function Header() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -46,12 +46,13 @@ export default function Header() {
                         </div>
 
                         <div className="flex flex-col p-4 space-y-3 mt-16 text-gray-700">
-                            <a href="/add-course"><SidebarItem icon="fa-book" text="Courses" /></a>
+                            <a href="/login"><SidebarItem icon="fa-book" text="Login" /></a>
+                            <a href="/registration"><SidebarItem icon="fa-book" text="Registration" /></a>
+                            <a href="/add-course"><SidebarItem icon="fa-book" text="Add Courses" /></a>
+                            <a href="/generated-courses"><SidebarItem icon="fa-book" text="Generated Courses" /></a>
 
-                            <SidebarItem icon="fa-certificate" text="Certificates" />
-                            <SidebarItem icon="fa-user" text="Generate New Course" />
-                            <SidebarItem icon="fa-chart-line" text="Progress Reports" />
-                            <SidebarItem icon="fa-trophy" text="Competitions" />
+
+
                         </div>
                         <div className='shadow-lg rounded-sm p-5 m-5'>
                             <div className=' flex flex-row'>
@@ -72,7 +73,7 @@ export default function Header() {
                 </div>
 
 
-                <div className="flex-1 w-full z-99 fixed top-0 max-w-6xl ">
+                <div className="flex-1 w-full z-99 fixed top-0 max-w-6xl">
                     <header className="bg-white p-4 flex flex-row shadow-lg rounded-t-0 rounded-b-2xl justify-between">
                         <div className='w-1/15 flex items-center'>
                             <button onClick={() => setSidebarOpen(true)} className="text-2xl text-gray-700">
