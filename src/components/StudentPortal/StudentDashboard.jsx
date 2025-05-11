@@ -3,14 +3,16 @@ import animation from '../../assets/animation.png';
 import Education from '../../assets/Education.png';
 import Brain from '../../assets/Brain.png';
 import Microscope from '../../assets/Microscope.png';
-import CourseCard from '../CourseCard';
-import CoursePreview from '../CoursePreview';
+import CourseCard from '../Card/CourseCard';
+import CoursePreview from '../CardsPreview/CoursePreview';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import AssignmentPreview from '../CardsPreview/AssignmentPreview';
+import QuizPreview from '../CardsPreview/QuizPreview';
 
 
-function StudentDashboard({ courses }) {
+function StudentDashboard({ courses, assignment, quiz }) {
     const data = [
         { name: 'Mon', lastWeek: 50, thisWeek: 65 },
         { name: 'Tue', lastWeek: 60, thisWeek: 40 },
@@ -183,13 +185,13 @@ function StudentDashboard({ courses }) {
                             Enrolled Assignments
                         </h1>
                     </div>
-                    <CoursePreview courses={courses.slice(0, 3)} />
+                    <AssignmentPreview assignment={assignment.slice(0, 3)} />
                     <div className='text-left mt-15 mb-10'>
                         <h1 className='heading-text-lg font-poppins '>
                             Enrolled Quizez
                         </h1>
                     </div>
-                    <CoursePreview courses={courses.slice(0, 3)} />
+                    <QuizPreview quiz={quiz.slice(0, 3)} />
 
 
                 </div>

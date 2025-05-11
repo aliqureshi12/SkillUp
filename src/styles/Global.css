@@ -38,7 +38,7 @@
 
 
 .bg-BgGradient {
-    background: linear-gradient(135deg, #4CBC9A, rgb(149, 219, 198), #4CBC9A);
+    background: linear-gradient(135deg, #4CBC9A, rgb(182, 241, 224), #4CBC9A);
     background-size: 300% 300%;
     animation: gradient-move 10s ease infinite;
 }

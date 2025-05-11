@@ -17,6 +17,7 @@ import ai5 from './assets/ai5.png';
 import ai6 from './assets/ai6.png';
 import treeAnimation from './assets/treeAnimation.gif';
 import StudentDashboard from './components/StudentPortal/StudentDashboard';
+import PrivateChat from './components/ChatRoom/PrivateChat';
 
 
 
@@ -31,7 +32,27 @@ function App() {
     { id: 5, title: "Advanced DSA", description: " Explore trees, graphs, heaps, and complex problem-solving strategies.", image: ai5, video: 'https://www.youtube.com/embed/nVyD6THcvDQ', animation: treeAnimation },
     { id: 6, title: "Design Patterns", description: " Implement reusable software design solutions using OOP concepts effectively.", image: ai6, video: 'https://www.youtube.com/embed/nVyD6THcvDQ', animation: treeAnimation },
   ]);
+  const [assignment, setAssignment] = useState(
+    [
+      {
+        AssignmentId: 1, AssignmentTitle: "Advanced DSA", AssignmentDescription: "Complete Assignment and then submit handwritten", DeadLine: "20-5-2025"
+      },
+      {
+        AssignmentId: 2, AssignmentTitle: "Design Patterns", AssignmentDescription: "Complete Assignment and then submit handwritten", DeadLine: "28-5-2025"
+      },
+    ]
+  )
+  const [quiz, setQuiz] = useState(
+    [
+      {
+        QuizId: 1, QuizTitle: "Advanced DSA", QuizDescription: "Complete Quiz and then submit", DeadLine: "20-5-2025"
+      },
+      {
+        QuizId: 2, QuizTitle: "Design Patterns", QuizDescription: "Complete Quiz and then submit", DeadLine: "28-5-2025"
+      },
 
+    ]
+  )
   return (
     <div className="App flex flex-col min-h-screen">
       <Header />
@@ -39,9 +60,10 @@ function App() {
 
         <Route path="/" element={<GeneratedCourses courses={courses} />} />
         <Route path="/generated-courses" element={<GeneratedCourses courses={courses} />} />
-        <Route path="/student-dashboard" element={<StudentDashboard courses={courses} />} />
+        <Route path="/student-dashboard" element={<StudentDashboard courses={courses} assignment={assignment} quiz={quiz} />} />
         <Route path="/home" element={<HomePage courses={courses} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/private-chat" element={<PrivateChat />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/courses-page" element={<CoursesPage courses={courses} />} />
         <Route path="/course/:id" element={<CourseDetail courses={courses} />} />

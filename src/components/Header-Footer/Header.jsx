@@ -51,6 +51,7 @@ export default function Header() {
                             <a href="/student-dashboard"><SidebarItem icon="fa-book" text="Student Dashboard" /></a>
                             <a href="/add-course"><SidebarItem icon="fa-book" text="Add Courses" /></a>
                             <a href="/generated-courses"><SidebarItem icon="fa-book" text="Generated Courses" /></a>
+                            <a href="/private-chat"><SidebarItem icon="fa-book" text="Private Chat" /></a>
 
 
 

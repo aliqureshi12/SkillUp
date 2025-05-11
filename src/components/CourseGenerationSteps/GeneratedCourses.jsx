@@ -3,8 +3,8 @@ import animation from '../../assets/animation.png';
 import Education from '../../assets/Education.png';
 import Brain from '../../assets/Brain.png';
 import Microscope from '../../assets/Microscope.png';
-import CourseCard from '../CourseCard';
-import CoursePreview from '../CoursePreview';
+import CourseCard from '../Card/CourseCard';
+import CoursePreview from '../CardsPreview/CoursePreview';
 
 
 
