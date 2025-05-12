@@ -61,13 +61,14 @@ function App() {
   const [instructor, setInstructor] = useState(
     [
       {
-        id: 1, image: avatar, name: "Professor Ali", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "5.0", reviews: "143", skills: ["Web", "Data Sructure"], achievements: "100", certificates: "20"
+        id: 1, image: avatar, HisCourse: [1, 2], name: "Professor Ali", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "5.0", reviews: "143", skills: ["Web", "Data Sructure"], achievements: "100", certificates: "20"
       },
       {
-        id: 2, image: avatar2, name: "Professor Hamza", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "4.7", reviews: "591", skills: ["OOP", "PDC"], achievements: "30", certificates: "13"
+        id: 2, image: avatar2, HisCourse: [3, 4], name: "Professor Hamza", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "4.7", reviews: "591", skills: ["OOP", "PDC"], achievements: "30", certificates: "13"
       },
       {
-        id: 3, image: avatar3, name: "Professor Haris", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "4.9", reviews: "563", skills: ["Python", "Java", "C++"], achievements: "93", certificates: "8"
+        id: 3, image: avatar3, HisCourse: [5, 6],
+        name: "Professor Haris", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "4.9", reviews: "563", skills: ["Python", "Java", "C++"], achievements: "93", certificates: "8"
       },
 
 

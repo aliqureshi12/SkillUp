@@ -110,7 +110,9 @@ function InstructorSingleProfile({ instructor, courses }) {
                             </div>
                             <div className=' '>
                                 {activeTab == 'course' && <div>
-                                    <CoursePreview courses={courses.slice(2,5)} />
+                                    <CoursePreview
+                                        courses={courses.filter(course => myInstructor.HisCourse.includes(course.id))}
+                                    />
 
 
                                 </div>}
