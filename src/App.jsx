@@ -15,9 +15,14 @@ import ai3 from './assets/ai3.png';
 import ai4 from './assets/ai4.png';
 import ai5 from './assets/ai5.png';
 import ai6 from './assets/ai6.png';
+import avatar from './assets/avatar.png';
+import avatar2 from './assets/avatar2.png';
+import avatar3 from './assets/avatar3.png';
 import treeAnimation from './assets/treeAnimation.gif';
 import StudentDashboard from './components/StudentPortal/StudentDashboard';
 import PrivateChat from './components/ChatRoom/PrivateChat';
+import Instructors from './components/Instructor/Instructors';
+import InstructorSingleProfile from './components/Instructor/InstructorSingleProfile';
 
 
 
@@ -53,6 +58,21 @@ function App() {
 
     ]
   )
+  const [instructor, setInstructor] = useState(
+    [
+      {
+        id: 1, image: avatar, name: "Professor Ali", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "5.0", reviews: "143", skills: ["Web", "Data Sructure"], achievements: "100", certificates: "20"
+      },
+      {
+        id: 2, image: avatar2, name: "Professor Hamza", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "4.7", reviews: "591", skills: ["OOP", "PDC"], achievements: "30", certificates: "13"
+      },
+      {
+        id: 3, image: avatar3, name: "Professor Haris", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "4.9", reviews: "563", skills: ["Python", "Java", "C++"], achievements: "93", certificates: "8"
+      },
+
+
+    ]
+  )
   return (
     <div className="App flex flex-col min-h-screen">
       <Header />
@@ -63,10 +83,12 @@ function App() {
         <Route path="/student-dashboard" element={<StudentDashboard courses={courses} assignment={assignment} quiz={quiz} />} />
         <Route path="/home" element={<HomePage courses={courses} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/instructors" element={<Instructors instructor={instructor} />} />
         <Route path="/private-chat" element={<PrivateChat />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/courses-page" element={<CoursesPage courses={courses} />} />
         <Route path="/course/:id" element={<CourseDetail courses={courses} />} />
+        <Route path="/instructor-Profile/:id" element={<InstructorSingleProfile instructor={instructor} courses={courses} />} />
         <Route path="/add-course" element={<CourseDescribe courses={courses} setCourses={setCourses} />} />
       </Routes>
       <Footer />
