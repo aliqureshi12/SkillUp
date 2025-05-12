@@ -23,19 +23,114 @@ import StudentDashboard from './components/StudentPortal/StudentDashboard';
 import PrivateChat from './components/ChatRoom/PrivateChat';
 import Instructors from './components/Instructor/Instructors';
 import InstructorSingleProfile from './components/Instructor/InstructorSingleProfile';
+import EnrollCourseSingle from './components/CourseGenerationSteps/EnrollCourseSingle';
 
 
 
 function App() {
   const [courses, setCourses] = useState([
     {
-      id: 1, title: "Artificial Intelligence Basics", description: "Explore AI concepts like machine learning and neural networks.", image: ai1, video: 'https://www.youtube.com/embed/nVyD6THcvDQ', animation: treeAnimation
+      id: 1,
+      title: "Artificial Intelligence Basics",
+      description: "Explore AI concepts like machine learning and neural networks.",
+      image: ai1,
+      video: 'https://www.youtube.com/embed/nVyD6THcvDQ',
+      animation: treeAnimation,
+      instructorId: 1,
+      learningPoints: [
+        "AI fundamentals",
+        "Machine learning",
+        "Neural networks",
+        "AI applications",
+        "Ethical AI",
+        "AI tools"
+      ]
     },
-    { id: 2, title: "Data Structures Basics", description: "Learn fundamental structures like arrays, stacks, and queues.", image: ai2, video: 'https://www.youtube.com/embed/nVyD6THcvDQ', animation: treeAnimation },
-    { id: 3, title: "Algorithms Essentials", description: " Understand sorting, searching, and optimization techniques efficiently.", image: ai3, video: 'https://www.youtube.com/embed/nVyD6THcvDQ', animation: treeAnimation },
-    { id: 4, title: "Object-Oriented Programming", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", image: ai4, video: 'https://www.youtube.com/embed/nVyD6THcvDQ', animation: treeAnimation },
-    { id: 5, title: "Advanced DSA", description: " Explore trees, graphs, heaps, and complex problem-solving strategies.", image: ai5, video: 'https://www.youtube.com/embed/nVyD6THcvDQ', animation: treeAnimation },
-    { id: 6, title: "Design Patterns", description: " Implement reusable software design solutions using OOP concepts effectively.", image: ai6, video: 'https://www.youtube.com/embed/nVyD6THcvDQ', animation: treeAnimation },
+    {
+      id: 2,
+      title: "Data Structures Basics",
+      description: "Learn fundamental structures like arrays, stacks, and queues.",
+      image: ai2,
+      instructorId: 1,
+      video: 'https://www.youtube.com/embed/nVyD6THcvDQ',
+      animation: treeAnimation,
+      learningPoints: [
+        "Arrays",
+        "Stacks",
+        "Queues",
+        "Linked lists",
+        "Complexity analysis",
+        "Data organization"
+      ]
+    },
+    {
+      id: 3,
+      title: "Algorithms Essentials",
+      description: "Understand sorting, searching, and optimization techniques efficiently.",
+      image: ai3,
+      instructorId: 2,
+      video: 'https://www.youtube.com/embed/nVyD6THcvDQ',
+      animation: treeAnimation,
+      learningPoints: [
+        "Sorting",
+        "Searching",
+        "Time complexity",
+        "Recursion",
+        "Optimization",
+        "Algorithm design"
+      ]
+    },
+    {
+      id: 4,
+      title: "Object-Oriented Programming",
+      description: "Master OOP principles like encapsulation, inheritance, and polymorphism.",
+      image: ai4,
+      instructorId: 2,
+      video: 'https://www.youtube.com/embed/nVyD6THcvDQ',
+      animation: treeAnimation,
+      learningPoints: [
+        "OOP concepts",
+        "Classes",
+        "Inheritance",
+        "Encapsulation",
+        "Polymorphism",
+        "Abstraction"
+      ]
+    },
+    {
+      id: 5,
+      title: "Advanced DSA",
+      description: "Explore trees, graphs, heaps, and complex problem-solving strategies.",
+      image: ai5,
+      instructorId: 3,
+      video: 'https://www.youtube.com/embed/nVyD6THcvDQ',
+      animation: treeAnimation,
+      learningPoints: [
+        "Trees",
+        "Graphs",
+        "Heaps",
+        "Backtracking",
+        "Dynamic programming",
+        "Problem-solving"
+      ]
+    },
+    {
+      id: 6,
+      title: "Design Patterns",
+      description: "Implement reusable software design solutions using OOP concepts effectively.",
+      image: ai6,
+      instructorId: 3,
+      video: 'https://www.youtube.com/embed/nVyD6THcvDQ',
+      animation: treeAnimation,
+      learningPoints: [
+        "Design principles",
+        "Singleton pattern",
+        "Factory pattern",
+        "Adapter pattern",
+        "Observer pattern",
+        "Code reusability"
+      ]
+    }
   ]);
   const [assignment, setAssignment] = useState(
     [
@@ -61,15 +156,40 @@ function App() {
   const [instructor, setInstructor] = useState(
     [
       {
-        id: 1, image: avatar, HisCourse: [1, 2], name: "Professor Ali", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "5.0", reviews: "143", skills: ["Web", "Data Sructure"], achievements: "100", certificates: "20"
+        id: 1, image: avatar, HisCourse: [1, 2], HisReviews: [1, 2], name: "Professor Ali", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "5.0", reviews: "143", skills: ["Web", "Data Sructure"], achievements: "100", certificates: "20"
       },
       {
-        id: 2, image: avatar2, HisCourse: [3, 4], name: "Professor Hamza", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "4.7", reviews: "591", skills: ["OOP", "PDC"], achievements: "30", certificates: "13"
+        id: 2, image: avatar2, HisCourse: [3, 4], HisReviews: [3, 4], name: "Professor Hamna", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "4.7", reviews: "591", skills: ["OOP", "PDC"], achievements: "30", certificates: "13"
       },
       {
-        id: 3, image: avatar3, HisCourse: [5, 6],
+        id: 3, image: avatar3, HisCourse: [5, 6], HisReviews: [5, 6],
         name: "Professor Haris", description: " Master OOP principles like encapsulation, inheritance, and polymorphism.", ranking: "4.9", reviews: "563", skills: ["Python", "Java", "C++"], achievements: "93", certificates: "8"
       },
+
+
+    ]
+  )
+  const [reviews, setReviews] = useState(
+    [
+      {
+        id: 1, rating: "5.0", reviews: "Master OOP principles like encapsulation, inheritance, and polymorphism.", reviewerName: "Ali"
+      },
+      {
+        id: 2, rating: "4.6", reviews: "Very Good", reviewerName: "Hamza"
+      },
+      {
+        id: 3, rating: "4.9", reviews: "Master OOP principles like encapsulation, inheritance, and polymorphism.", reviewerName: "Haris"
+      },
+      {
+        id: 4, rating: "4.2", reviews: "Master OOP principles like encapsulation, inheritance, and polymorphism.", reviewerName: "Faizan"
+      },
+      {
+        id: 5, rating: "4.5", reviews: "Master OOP principles like encapsulation, inheritance, and polymorphism.", reviewerName: "Ahad"
+      },
+      {
+        id: 6, rating: "4.1", reviews: "Master OOP principles like encapsulation, inheritance, and polymorphism.", reviewerName: "Hamza"
+      },
+
 
 
     ]
@@ -89,7 +209,8 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/courses-page" element={<CoursesPage courses={courses} />} />
         <Route path="/course/:id" element={<CourseDetail courses={courses} />} />
-        <Route path="/instructor-Profile/:id" element={<InstructorSingleProfile instructor={instructor} courses={courses} />} />
+        <Route path="/instructor-Profile/:id" element={<InstructorSingleProfile instructor={instructor} courses={courses} reviews={reviews} />} />
+        <Route path="/enroll-course-single/:id" element={<EnrollCourseSingle instructor={instructor} courses={courses} reviews={reviews} />} />
         <Route path="/add-course" element={<CourseDescribe courses={courses} setCourses={setCourses} />} />
       </Routes>
       <Footer />

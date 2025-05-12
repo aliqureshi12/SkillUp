@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CoursePreview from '../CardsPreview/CoursePreview';
+import ReviewsPreview from '../CardsPreview/ReviewsPreview';
 
-function InstructorSingleProfile({ instructor, courses }) {
+function InstructorSingleProfile({ instructor, courses, reviews }) {
     const { id } = useParams();
     const myInstructor = instructor.find(i => i.id === parseInt(id));
     const [activeTab, setActiveTab] = useState('course')
@@ -117,9 +118,9 @@ function InstructorSingleProfile({ instructor, courses }) {
 
                                 </div>}
                                 {activeTab === 'reviews' && (
-                                    <div className="flex justify-center">
-                                        <h1>hi</h1>
-                                    </div>
+
+                                    <ReviewsPreview reviews={reviews.filter(reviews => myInstructor.HisReviews.includes(reviews.id))} />
+
                                 )}
                             </div>
                         </div>
