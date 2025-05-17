@@ -24,6 +24,9 @@ import PrivateChat from './components/ChatRoom/PrivateChat';
 import Instructors from './components/Instructor/Instructors';
 import InstructorSingleProfile from './components/Instructor/InstructorSingleProfile';
 import EnrollCourseSingle from './components/CourseGenerationSteps/EnrollCourseSingle';
+import AssignmentDetail from './components/Assignment/AssignmentDetail';
+import QuizDetail from './components/Quiz/QuizDeail';
+import QuizSession from './components/Quiz/QuizSession';
 
 
 
@@ -132,27 +135,96 @@ function App() {
       ]
     }
   ]);
-  const [assignment, setAssignment] = useState(
-    [
-      {
-        AssignmentId: 1, AssignmentTitle: "Advanced DSA", AssignmentDescription: "Complete Assignment and then submit handwritten", DeadLine: "20-5-2025"
-      },
-      {
-        AssignmentId: 2, AssignmentTitle: "Design Patterns", AssignmentDescription: "Complete Assignment and then submit handwritten", DeadLine: "28-5-2025"
-      },
-    ]
-  )
-  const [quiz, setQuiz] = useState(
-    [
-      {
-        QuizId: 1, QuizTitle: "Advanced DSA", QuizDescription: "Complete Quiz and then submit", DeadLine: "20-5-2025"
-      },
-      {
-        QuizId: 2, QuizTitle: "Design Patterns", QuizDescription: "Complete Quiz and then submit", DeadLine: "28-5-2025"
-      },
 
-    ]
-  )
+  const [assignment, setAssignments] = useState([
+    {
+      AssignmentId: 1,
+      AssignmentTitle: "Advanced DSA",
+      AssignmentDescription: "Complete Assignment and submit handwritten solutions",
+      DeadLine: "20-05-2025",
+      status: "Pending",
+      totalMarks: 100,
+      questionsCount: 5,
+      attemptsLeft: 3,
+      attachments: [
+        {
+          name: "Problem-Statement.pdf",
+          url: "#",
+          type: "PDF",
+          size: "2.4 MB"
+        }
+      ],
+      objectives: [
+        "Understand core data structures",
+        "Implement complex algorithms",
+        "Analyze time complexity"
+      ],
+      guidelines: [
+        "Submit PDF format only",
+        "Include complexity analysis",
+        "Properly comment your code",
+        "No late submissions accepted"
+      ],
+      requirements: [
+        "Complete all 5 questions",
+        "Handwritten solutions required",
+        "Include testing scenarios"
+      ],
+      gradingCriteria: [
+        { category: "Correctness", percentage: 70 },
+        { category: "Documentation", percentage: 20 },
+        { category: "Code Quality", percentage: 10 }
+      ],
+      submissions: [
+        {
+          fileName: "solution.pdf",
+          date: "15-05-2025",
+          status: "Graded",
+          grade: 85
+        }
+      ]
+    },
+    {
+      AssignmentId: 2,
+      AssignmentTitle: "Design Patterns",
+      AssignmentDescription: "Implement common design patterns in Java",
+      DeadLine: "28-05-2025",
+      status: "Pending",
+      totalMarks: 100,
+      questionsCount: 4,
+      attemptsLeft: 2,
+      attachments: [
+        {
+          name: "Design-Specifications.docx",
+          url: "#",
+          type: "DOCX",
+          size: "1.8 MB"
+        }
+      ],
+      objectives: [
+        "Understand SOLID principles",
+        "Implement creational patterns",
+        "Apply behavioral patterns"
+      ],
+      guidelines: [
+        "Submit .zip file with source code",
+        "Include UML diagrams",
+        "Add proper documentation",
+        "Follow naming conventions"
+      ],
+      requirements: [
+        "Implement 4 patterns",
+        "Include test cases",
+        "Add documentation comments"
+      ],
+      gradingCriteria: [
+        { category: "Implementation", percentage: 60 },
+        { category: "Documentation", percentage: 30 },
+        { category: "Originality", percentage: 10 }
+      ],
+      submissions: [] // No submissions yet
+    }
+  ]);
   const [instructor, setInstructor] = useState(
     [
       {
@@ -169,6 +241,58 @@ function App() {
 
     ]
   )
+
+  const [quizzes, setQuizzes] = useState([
+    {
+      QuizId: 1,
+      timeLimit: 30,
+      questions: [
+        {
+          text: "Which of these is NOT a valid Python data type?",
+          options: ["tuple", "dict", "array", "decimal"],
+          correctAnswer: 2,
+          points: 5
+        },
+        {
+          text: "What is the output of 'print(3 * '7')' in Python?",
+          options: ["21", "777", "Error", "37"],
+          correctAnswer: 1,
+          points: 5
+        },
+
+      ],
+      totalPoints: 100,
+      QuizTitle: "Python Fundamentals Certification",
+      QuizDescription: "Test your knowledge of core Python programming concepts and best practices.",
+      timeLimit: 30,
+      questionsCount: 20,
+      attemptsLeft: 2,
+      difficulty: "Intermediate",
+      totalPoints: 100,
+      passingScore: 75,
+      timePerQuestion: 90,
+      structure: [
+        "Multiple Choice Questions (80%)",
+        "Code Analysis (15%)",
+        "Practical Coding (5%)",
+        "Negative marking for wrong answers"
+      ],
+      scoringPolicy: [
+        { category: "Correct Answer", value: "+4 points" },
+        { category: "Wrong Answer", value: "-1 point" },
+        { category: "Unanswered", value: "0 points" }
+      ],
+      attempts: [
+        { score: 68, date: "2023-03-15", timeSpent: 25 },
+        { score: 72, date: "2023-04-02", timeSpent: 28 }
+      ],
+
+      sampleQuestion: {
+        text: "Which of these is NOT a valid Python data type?",
+        options: ["tuple", "dict", "array", "decimal"]
+      }
+    }
+  ])
   const [reviews, setReviews] = useState(
     [
       {
@@ -199,9 +323,9 @@ function App() {
       <Header />
       <Routes>
 
-        <Route path="/" element={<GeneratedCourses courses={courses} />} />
+        <Route path="/" element={<StudentDashboard courses={courses} assignment={assignment} quizzes={quizzes} />} />
         <Route path="/generated-courses" element={<GeneratedCourses courses={courses} />} />
-        <Route path="/student-dashboard" element={<StudentDashboard courses={courses} assignment={assignment} quiz={quiz} />} />
+        <Route path="/student-dashboard" element={<StudentDashboard courses={courses} assignment={quizzes} quiz={quizzes} />} />
         <Route path="/home" element={<HomePage courses={courses} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/instructors" element={<Instructors instructor={instructor} />} />
@@ -209,6 +333,9 @@ function App() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/courses-page" element={<CoursesPage courses={courses} />} />
         <Route path="/course/:id" element={<CourseDetail courses={courses} />} />
+        <Route path="/assignment/:id" element={<AssignmentDetail assignments={assignment} />} />
+        <Route path="/quizzes/:id" element={<QuizDetail quizzes={quizzes} />} />
+        <Route path="/quiz/:id/start" element={<QuizSession quizzes={quizzes} />} />
         <Route path="/instructor-Profile/:id" element={<InstructorSingleProfile instructor={instructor} courses={courses} reviews={reviews} />} />
         <Route path="/enroll-course-single/:id" element={<EnrollCourseSingle instructor={instructor} courses={courses} reviews={reviews} />} />
         <Route path="/add-course" element={<CourseDescribe courses={courses} setCourses={setCourses} />} />

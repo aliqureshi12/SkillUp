@@ -3,7 +3,7 @@ import AssignmentCard from '../Card/AssignmentCard'
 
 function AssignmentPreview({ assignment }) {
     return (
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-2 gap-10">
             {assignment.map(assignment => (
                 <AssignmentCard key={assignment.AssignmentId} assignment={assignment} />
             ))}

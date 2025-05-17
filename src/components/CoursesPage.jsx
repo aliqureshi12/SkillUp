@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSection from './HeroSection';
+
 import AboutSection from './AboutSection';
 import CoursePreview from './CardsPreview/CoursePreview';
 import CallToAction from './CallToAction';

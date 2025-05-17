@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CoursePreview from '../CardsPreview/CoursePreview';
 import ReviewsPreview from '../CardsPreview/ReviewsPreview';
+import HeroSection from '../Hero Section/HeroSection';
 
 function EnrollCourseSingle({ instructor, courses, reviews }) {
     const { id } = useParams();
@@ -20,6 +21,7 @@ function EnrollCourseSingle({ instructor, courses, reviews }) {
 
     return (
         <div className="mt-30 mb-30 font-poppins">
+
             <div className='grid grid-cols-[65%_35%] max-w-6xl mx-auto'>
                 <div className='order-2 z-1 '>
                     <div className='shadow-lg rounded-sm p-5 m- bg-white sticky top-20 pb-10 '>
@@ -35,7 +37,7 @@ function EnrollCourseSingle({ instructor, courses, reviews }) {
                             <div className='flex flex-row justify-between items-center  border-t border-gray-200 py-5'>
                                 <div className='flex flex-row gap-2'>
                                     <i className="fas fa-check text-greenSmall"></i>
-                                    <p className="font-poppins text-[13px] -mb-[7px]">Courses Title</p>
+                                    <p className="font-poppins text-[13px] -mb-[7px]">Courses Title</p>``
                                 </div>
                                 <p className='font-poppins text-[13px] font-semibold'>{course.title}</p>
 

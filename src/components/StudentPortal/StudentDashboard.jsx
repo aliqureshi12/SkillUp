@@ -12,7 +12,7 @@ import AssignmentPreview from '../CardsPreview/AssignmentPreview';
 import QuizPreview from '../CardsPreview/QuizPreview';
 
 
-function StudentDashboard({ courses, assignment, quiz }) {
+function StudentDashboard({ courses, assignment, quizzes }) {
     const data = [
         { name: 'Mon', lastWeek: 50, thisWeek: 65 },
         { name: 'Tue', lastWeek: 60, thisWeek: 40 },
@@ -191,7 +191,7 @@ function StudentDashboard({ courses, assignment, quiz }) {
                             Enrolled Quizez
                         </h1>
                     </div>
-                    <QuizPreview quiz={quiz.slice(0, 3)} />
+                    <QuizPreview quizzes={quizzes.slice(0, 3)} />
 
 
                 </div>

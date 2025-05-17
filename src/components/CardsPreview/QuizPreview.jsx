@@ -1,11 +1,11 @@
 import React from 'react'
 import QuizCard from '../Card/QuizCard'
 
-function QuizPreview({ quiz }) {
+function QuizPreview({ quizzes }) {
     return (
-        <div className="grid grid-cols-3 gap-10">
-            {quiz.map(quiz => (
-                <QuizCard key={quiz.QuizId} quiz={quiz} />
+        <div className="grid grid-cols-2 gap-10">
+            {quizzes.map(quizzes => (
+                <QuizCard key={quizzes.QuizId} quizzes={quizzes} />
             ))}
         </div>
 
