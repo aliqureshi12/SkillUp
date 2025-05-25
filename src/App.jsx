@@ -5,8 +5,6 @@ import Footer from './components/Header-Footer/Footer';
 import HomePage from './components/HomePage';
 import CourseDetail from './components/CourseDetail';
 import CoursesPage from './components/CoursesPage';
-import Login from './components/loginScreens/Login';
-import Registration from './components/loginScreens/Registration';
 import CourseDescribe from './components/CourseGenerationSteps/CourseDescribe';
 import GeneratedCourses from './components/CourseGenerationSteps/GeneratedCourses';
 import ai1 from './assets/ai.png';
@@ -27,6 +25,10 @@ import EnrollCourseSingle from './components/CourseGenerationSteps/EnrollCourseS
 import AssignmentDetail from './components/Assignment/AssignmentDetail';
 import QuizDetail from './components/Quiz/QuizDeail';
 import QuizSession from './components/Quiz/QuizSession';
+import Login from './components/Instructor/loginScreens/Login';
+import Registration from './components/Instructor/loginScreens/Registration';
+import StartingPage from './components/StartingPage/StartingPage';
+import RoleSelection from './components/StartingPage/RoleSelection';
 
 
 
@@ -323,13 +325,15 @@ function App() {
       <Header />
       <Routes>
 
-        <Route path="/" element={<StudentDashboard courses={courses} assignment={assignment} quizzes={quizzes} />} />
+        <Route path="/" element={<StartingPage />} />
         <Route path="/generated-courses" element={<GeneratedCourses courses={courses} />} />
-        <Route path="/student-dashboard" element={<StudentDashboard courses={courses} assignment={quizzes} quiz={quizzes} />} />
+        <Route path="/student-dashboard" element={<StudentDashboard courses={courses} assignment={assignment} quizzes={quizzes} />} />
+        <Route path="/select-role" element={<RoleSelection />} />
         <Route path="/home" element={<HomePage courses={courses} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/instructors" element={<Instructors instructor={instructor} />} />
         <Route path="/private-chat" element={<PrivateChat />} />
+        <Route path="/starting-page" element={<StartingPage />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/courses-page" element={<CoursesPage courses={courses} />} />
         <Route path="/course/:id" element={<CourseDetail courses={courses} />} />

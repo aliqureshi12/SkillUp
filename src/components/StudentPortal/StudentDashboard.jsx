@@ -179,19 +179,19 @@ function StudentDashboard({ courses, assignment, quizzes }) {
                             Enrolled Courses
                         </h1>
                     </div>
-                    <CoursePreview courses={courses.slice(0, 3)} />
+                    <CoursePreview courses={Array.isArray(courses) ? courses.slice(0, 3) : []} />
                     <div className='text-left mt-15 mb-10'>
                         <h1 className='heading-text-lg font-poppins '>
                             Enrolled Assignments
                         </h1>
                     </div>
-                    <AssignmentPreview assignment={assignment.slice(0, 3)} />
+                    <AssignmentPreview assignment={Array.isArray(assignment) ? assignment.slice(0, 3) : []} />
                     <div className='text-left mt-15 mb-10'>
                         <h1 className='heading-text-lg font-poppins '>
                             Enrolled Quizez
                         </h1>
                     </div>
-                    <QuizPreview quizzes={quizzes.slice(0, 3)} />
+                    <QuizPreview quizzes={Array.isArray(quizzes) ? quizzes.slice(0, 3) : []} />
 
 
                 </div>

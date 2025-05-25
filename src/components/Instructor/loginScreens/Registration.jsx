@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link, NavLink } from 'react-router-dom';
-import logoWhite from '../../assets/logoWhite.png';
+import logoWhite from '../../../assets/logoWhite.png';
 
 
 function Registration() {

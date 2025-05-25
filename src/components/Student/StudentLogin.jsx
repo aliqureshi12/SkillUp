@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link, NavLink } from 'react-router-dom';
-import logoWhite from '../../assets/logoWhite.png';
+import logoWhite from '../../../assets/logoWhite.png';
 
 
-function Login() {
+function StudentLogin() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
@@ -103,4 +103,4 @@ function Login() {
     )
 }
 
-export default Login
+export default StudentLogin
