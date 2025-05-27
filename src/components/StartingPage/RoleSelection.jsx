@@ -15,14 +15,14 @@ const RoleSelection = () => {
             description: 'Join to learn new skills, access courses, and track your progress',
             color: 'from-[#4CBC9A] to-[#3aa37f]',
             image: student,
-            path: '/student-dashboard'
+            path: '/login'
         },
         {
             title: 'Tutor',
             description: 'Share your knowledge, create courses, and guide learners',
             color: 'from-[#FF6B6B] to-[#FF8E53]',
             image: tutor,
-            path: '/tutor-dashboard'
+            path: '/tutor-login'
         }
     ];
 

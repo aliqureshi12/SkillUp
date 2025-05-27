@@ -24,58 +24,90 @@ function StudentDashboard({ courses, assignment, quizzes }) {
     ];
     return (
         <div className="min-h-screen mt-30 mb-30">
-            <div className='grid grid-cols-[80%_20%] max-w-6xl mx-auto'>
+            <div className='grid grid-cols-[75%_25%] max-w-6xl mx-auto'>
                 <div className='order-2 z-1 '>
-                    <div className='shadow-lg rounded-sm p-5 m- bg-white sticky top-20'>
-                        <div className=' flex flex-row justify-between'>
-                            <h1 className='font-poppins font-extrabold text-[16px]'>Home Work</h1>
-                            <i className='fas fa-ellipsis'></i>
+                    <div className='space-y-8 sticky top-25'>
 
-                        </div>
-                        <div>
-                            <div className="w-full bg-gray-200 rounded-2xl h-2.5 mt-5 mb-2">
-                                <div
-                                    className="bg-[#FEC64F] h-2.5 rounded-full"
-                                    style={{ width: '60%' }}
-                                ></div>
-                            </div>
-                            <div className=' flex flex-row justify-between'>
-                                <p className='font-poppins font-semibold text-[11px]'>Web Design</p>
-                                <p className='font-poppins font-semibold text-[11px]'>6/10</p>
-
-
-                            </div>
-                        </div>
-                        <div>
-                            <div className="w-full bg-gray-200 rounded-2xl h-2.5 mt-5 mb-2">
-                                <div
-                                    className="bg-BgPrimary h-2.5 rounded-full"
-                                    style={{ width: '80%' }}
-                                ></div>
-                            </div>
-                            <div className=' flex flex-row justify-between'>
-                                <p className='font-poppins font-semibold text-[11px]'>Data Structure</p>
-                                <p className='font-poppins font-semibold text-[11px]'>8/10</p>
-
-
+                        <div className='bg-white p-6 rounded-xl shadow-md'>
+                            <h3 className='text-lg font-bold mb-4'>⏳ Upcoming Deadlines</h3>
+                            <div className='space-y-4'>
+                                <div className='flex items-start gap-3'>
+                                    <div className="w-8 h-8 bg-[#4CBC9A] rounded-full flex items-center justify-center mt-1">
+                                        <i className="fas fa-file-alt text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p className='font-medium'>Web Design Final Project</p>
+                                        <p className='text-sm text-gray-500'>Due: Tomorrow 3:00 PM</p>
+                                    </div>
+                                </div>
+                                <div className='flex items-start gap-3'>
+                                    <div className="w-8 h-8 bg-[#FEC64F] rounded-full flex items-center justify-center mt-1">
+                                        <i className="fas fa-question-circle text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p className='font-medium'>JavaScript Quiz</p>
+                                        <p className='text-sm text-gray-500'>Due: Fri 11:59 PM</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
 
+                        <div className='bg-white p-6 rounded-xl shadow-md'>
+                            <h3 className='text-lg font-bold mb-4'>📈 Course Progress</h3>
+                            <div className='space-y-4'>
+                                <div>
+                                    <div className="flex justify-between mb-1">
+                                        <span>React Fundamentals</span>
+                                        <span>65%</span>
+                                    </div>
+                                    <div className="w-full bg-gray-200 rounded-full h-2">
+                                        <div className="bg-[#4CBC9A] h-2 rounded-full" style={{ width: '65%' }}></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="flex justify-between mb-1">
+                                        <span>UI/UX Design</span>
+                                        <span>80%</span>
+                                    </div>
+                                    <div className="w-full bg-gray-200 rounded-full h-2">
+                                        <div className="bg-[#FEC64F] h-2 rounded-full" style={{ width: '80%' }}></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
-
+                        <div className='bg-white p-6 rounded-xl shadow-md'>
+                            <h3 className='text-lg font-bold mb-4'>🚀 Quick Actions</h3>
+                            <div className='space-y-3'>
+                                <button className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition">
+                                    <i className="fas fa-video text-[#4CBC9A]"></i>
+                                    Join Live Session
+                                </button>
+                                <button className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition">
+                                    <i className="fas fa-tasks text-[#FEC64F]"></i>
+                                    View Study Plan
+                                </button>
+                                <button className="w-full flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition">
+                                    <i className="fas fa-certificate text-[#6c5dd3]"></i>
+                                    Request Certificate
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className='order-1 pr-5'>
                     <div className='max-w-6xl relative mx-auto flex flex-col bg-BgPrimary rounded-2xl py-14 px-10 shadow-2xl'>
                         <i className='fas fa-circle-half-stroke rotate-180 absolute text-white text-[200px] opacity-20  -right-25'></i>
-                        <div className='text-left w-1/2 ' >
+                        <div className='text-left w-[80%] ' >
                             <h1 className='heading-text-lg font-poppins pb-2 text-white'>
                                 Join Now and Get Discount
                                 Voucher Up To 20%
                             </h1>
-                            <p className='text-white font-poppins'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. </p>
+                            <p className='text-white font-poppins'>Start your learning journey with SkillUp — enroll in top-rated courses designed to boost your skills and career.
+
+                            </p>
                         </div>
 
 
@@ -167,7 +199,7 @@ function StudentDashboard({ courses, assignment, quizzes }) {
                             </div>
                             <h3 className="text-base font-bold text-gray-700 mb-1">My Progress</h3>
                             <p className="text-sm text-gray-500 text-center px-2 mb-2">
-                                Lorem ipsum dolor sit amet consectetur adipiscing elit sed do.
+                                Track your course completions, quiz results, and assignments in one place.
                             </p>
                             <button className="btn-primary">
                                 More Details
@@ -179,7 +211,7 @@ function StudentDashboard({ courses, assignment, quizzes }) {
                             Enrolled Courses
                         </h1>
                     </div>
-                    <CoursePreview courses={Array.isArray(courses) ? courses.slice(0, 3) : []} />
+                    <CoursePreview courses={Array.isArray(courses) ? courses.slice(0, 4) : []} />
                     <div className='text-left mt-15 mb-10'>
                         <h1 className='heading-text-lg font-poppins '>
                             Enrolled Assignments

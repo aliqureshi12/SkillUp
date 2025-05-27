@@ -29,10 +29,141 @@ import Login from './components/Instructor/loginScreens/Login';
 import Registration from './components/Instructor/loginScreens/Registration';
 import StartingPage from './components/StartingPage/StartingPage';
 import RoleSelection from './components/StartingPage/RoleSelection';
+import Tutor_Login from './components/Instructor/loginScreens/Tutor/Tutor_Login';
+import TutorDashboard from './components/TutorPortal/TutorDashboard';
 
 
 
 function App() {
+  const [enrollmentRequests] = useState([
+    {
+      id: 1,
+      studentName: "Ali Qureshi",
+      course: "Artificial Intelligence Basics",
+      date: "2024-03-15"
+    },
+    {
+      id: 2,
+      studentName: "Ahad Amir",
+      course: "Advanced DSA",
+      date: "2024-03-14"
+    },
+    {
+      id: 3,
+      studentName: "Hamza Qureshi",
+      course: "Design Patterns",
+      date: "2024-03-13"
+    }
+  ]);
+
+  const [liveSessions] = useState([
+    {
+      id: 1,
+      title: "AI Q&A Session",
+      date: "2024-03-20",
+      time: "14:00",
+      duration: "60 mins",
+      attendance: 85,
+      attentiveness: 78
+    },
+    {
+      id: 2,
+      title: "DSA Problem Solving",
+      date: "2024-03-22",
+      time: "16:00",
+      duration: "90 mins",
+      attendance: 92,
+      attentiveness: 88
+    },
+    {
+      id: 3,
+      title: "OOP Deep Dive",
+      date: "2024-03-25",
+      time: "11:00",
+      duration: "75 mins",
+      attendance: 78,
+      attentiveness: 82
+    }
+  ]);
+
+  const [submissions] = useState([
+    {
+      id: 1,
+      assignment: "Neural Network Implementation",
+      course: "Artificial Intelligence Basics",
+      status: "Graded",
+      dueDate: "2024-03-10",
+      submitted: "2024-03-09",
+      score: "A"
+    },
+    {
+      id: 2,
+      assignment: "Binary Tree Traversal",
+      course: "Advanced DSA",
+      status: "Pending",
+      dueDate: "2024-03-15",
+      submitted: "2024-03-14"
+    },
+    {
+      id: 3,
+      assignment: "Singleton Pattern Demo",
+      course: "Design Patterns",
+      status: "Graded",
+      dueDate: "2024-03-12",
+      submitted: "2024-03-11",
+      score: "B+"
+    }
+  ]);
+  const [tcourses] = useState([
+    {
+      id: 1,
+      title: "Artificial Intelligence Basics",
+      enrolled: 45,
+      completion: 80,
+      enrollmentRequests: 3,
+      instructorId: 1
+    },
+    {
+      id: 2,
+      title: "Data Structures Basics",
+      enrolled: 32,
+      completion: 65,
+      enrollmentRequests: 2,
+      instructorId: 1
+    },
+    {
+      id: 3,
+      title: "Algorithms Essentials",
+      enrolled: 28,
+      completion: 72,
+      enrollmentRequests: 1,
+      instructorId: 2
+    },
+    {
+      id: 4,
+      title: "Object-Oriented Programming",
+      enrolled: 39,
+      completion: 88,
+      enrollmentRequests: 5,
+      instructorId: 2
+    },
+    {
+      id: 5,
+      title: "Advanced DSA",
+      enrolled: 25,
+      completion: 60,
+      enrollmentRequests: 2,
+      instructorId: 3
+    },
+    {
+      id: 6,
+      title: "Design Patterns",
+      enrolled: 41,
+      completion: 75,
+      enrollmentRequests: 4,
+      instructorId: 3
+    }
+  ]);
   const [courses, setCourses] = useState([
     {
       id: 1,
@@ -328,9 +459,11 @@ function App() {
         <Route path="/" element={<StartingPage />} />
         <Route path="/generated-courses" element={<GeneratedCourses courses={courses} />} />
         <Route path="/student-dashboard" element={<StudentDashboard courses={courses} assignment={assignment} quizzes={quizzes} />} />
+        <Route path="/tutor-dashboard" element={<TutorDashboard tcourses={tcourses} enrollmentRequests={enrollmentRequests} liveSessions={liveSessions} submissions={submissions} />} />
         <Route path="/select-role" element={<RoleSelection />} />
         <Route path="/home" element={<HomePage courses={courses} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/tutor-login" element={<Tutor_Login />} />
         <Route path="/instructors" element={<Instructors instructor={instructor} />} />
         <Route path="/private-chat" element={<PrivateChat />} />
         <Route path="/starting-page" element={<StartingPage />} />

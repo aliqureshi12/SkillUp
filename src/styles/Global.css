@@ -3,6 +3,8 @@
     --BgSecondaryColor: #C2F7E7;
     --BgWhiteColor: #ffffff;
     --headingColor: #000000;
+    --yellowColor: #FEC64F;
+
 
     --GreyBgColor: #EFEFEF;
 
@@ -21,6 +23,67 @@
 
 }
 
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(5deg);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-5deg);
+    }
+}
+
+@keyframes gradient-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-float1 {
+    animation: float1 6s ease-in-out infinite;
+}
+
+.animate-float2 {
+    animation: float2 5s ease-in-out infinite;
+}
+
+.animate-float3 {
+    animation: float1 7s ease-in-out infinite;
+}
+
+.animate-gradient-rotate {
+    animation: gradient-rotate 20s linear infinite;
+}
 
 @keyframes gradient-move {
     0% {
@@ -74,6 +137,10 @@
 
 .hover\:border-hoverGreen:hover {
     border-color: var(--BgPrimary-Color);
+}
+
+.hover\:border-hoverYellow:hover {
+    border-color: var(--yellowColor);
 }
 
 .border-hoverGreen {

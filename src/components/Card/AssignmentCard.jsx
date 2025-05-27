@@ -3,7 +3,7 @@ import { ClockIcon, DocumentTextIcon, AcademicCapIcon } from '@heroicons/react/2
 
 function AssignmentCard({ assignment }) {
     return (
-        <div className="group relative p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-[#C2F7E7] hover:border-hoverGreen">
+        <div className="group relative p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-hoverGreen hover:border-hoverYellow">
             <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center space-x-3">
                     <div className="p-2 bg-indigo-50 rounded-lg">
@@ -45,7 +45,7 @@ function AssignmentCard({ assignment }) {
                 </button>
             </div>
 
-            
+
             <div className="mt-6 pt-4 border-t border-gray-200">
                 <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-medium text-gray-500">Progress</span>

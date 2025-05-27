@@ -3,7 +3,7 @@ import CourseCard from '../Card/CourseCard';
 
 function CoursePreview({ courses }) {
     return (
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-2 gap-10">
             {courses.map(course => (
                 <CourseCard key={course.id} course={course} />
             ))}

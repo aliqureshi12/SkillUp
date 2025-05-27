@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link, NavLink } from 'react-router-dom';
-import logoWhite from '../../../assets/logoWhite.png';
+import logoWhite from '../../../../assets/logoWhite.png';
 
 
-function Login() {
+function Tutor_Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
@@ -27,7 +27,7 @@ function Login() {
         setSuccess("You have been Login Successfully!")
 
         setTimeout(() => {
-            navigate('/student-dashboard')
+            navigate('/tutor-dashboard')
         }, 1500)
     }
 
@@ -71,7 +71,7 @@ function Login() {
                             <a href="/" className='text-greenSmall'> Forget Your Password?</a>
                         </div>
                         <div className='flex justify-center'>
-                            <button type='submit' className="btn-primary" >
+                            <button type='submit' className="btn-primary">
                                 Login
                             </button>
                         </div>
@@ -103,4 +103,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Tutor_Login

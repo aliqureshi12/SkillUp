@@ -3,7 +3,7 @@ import { ClockIcon, QuestionMarkCircleIcon, PuzzlePieceIcon } from '@heroicons/r
 
 function QuizCard({ quizzes }) {
     return (
-        <div className="group relative p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-[#C2F7E7] hover:border-ehoverGreen font-poppins ">
+        <div className="group relative p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 border-hoverGreen hover:border-hoverYellow font-poppins">
             <div className="flex justify-between items-center mb-4">
                 <div className="flex items-center space-x-3">
                     <div className="p-2 bg-emerald-50 rounded-lg">

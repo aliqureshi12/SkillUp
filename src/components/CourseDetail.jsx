@@ -103,10 +103,10 @@ function CourseDetail({ courses }) {
     return (
         <div>
             <HeroSection
-                title="About Us"
+                title={course.title}
                 breadcrumb={[
                     { label: 'Home', path: '/' },
-                    { label: 'About Us' },
+                    { label: course.title },
                 ]}
             />
             <div className='min-h-screen mt-0'>
